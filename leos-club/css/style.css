@@ -1,0 +1,99 @@
+body {
+  font-family: Roboto, sans-serif;
+  outline: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+
+  color: #8B1A1C;
+}
+
+/* CSS Classes for General Tasks */
+.noSelect {
+  user-select: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -o-user-select: none;
+}
+
+.centerVertically {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#header {
+  width: 100%;
+  height: 300px;/*45%;*/
+  background-color: #FEBF58;
+
+  position: absolute;
+  display: inline-block;
+}
+
+#leoIcon {
+  width: 195px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top:20px;
+    margin-bottom: 15px;
+}
+
+#headerLocation {
+  text-align:center;
+  margin-top: 10px;
+
+  font-size: 18px;
+
+}
+
+#linkContainer {
+  width: 100%;
+  height: auto;
+
+text-align:center;
+padding: 5px 0px;
+margin-top:300px;
+min-width: 221px;
+background-color:#8B1A1C;
+color: #FEBF58;
+position: absolute;
+}
+
+#linkText {
+  text-decoration: none;
+  color:  #FEBF58;
+  padding: 7.5px;
+  font-size: 16px;
+  transition-duration: 0.5s;
+  display: inline-block;
+ border-radius: 2em;
+}
+
+#linkText:hover {
+
+  background-color: #FEC66B;
+}
+
+#seperator {
+  background-color: #D2D2D2;
+  height: 1px;
+  width: 80%;
+margin-left: 10%;
+margin-right: 10%;
+position: absolute;
+  margin-top: 385px;
+
+
+
+}
+
+#contentContainer {
+  text-align:center;
+  margin-top: 424px;
+  position: absolute;
+}

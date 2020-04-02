@@ -1,0 +1,11 @@
+{
+  "name": "scouting-2016",
+  "version": "1.0.0",
+  "description": "",
+  "main": "chatserver.js",
+  "dependencies": {
+    "express": "*",
+    "socket.io": "*"
+  },
+  "author": "austin" 
+}

@@ -1,0 +1,323 @@
+body {
+  background-color: #ECECEC;
+  font-family: 'Roboto', sans-serif;
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+  outline: none;
+}
+
+.noSelect {
+  user-select: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -o-user-select: none;
+}
+
+::-webkit-scrollbar {
+  width:   6px;
+  height:   6px;
+}
+
+::-webkit-scrollbar-track-piece {
+  background-color:   #ffffff;
+  -webkit-border-radius:   6px;
+}
+
+::-webkit-scrollbar-thumb:vertical {
+  height:   6px;
+  background-color:   #666;
+  -webkit-border-radius:   6px;
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+  width:   6px;
+  background-color:   #666;
+  -webkit-border-radius:   6px;
+}
+
+#header {
+  width: 20em;
+  height: 100%;
+  left: 0px;
+  top: 0px;
+  bottom: 0px;
+  background-color: #478FEB;
+  position: absolute;
+  display: block;
+  box-shadow: 0px 0px 16px 4px rgba(0,0,0,0.2);
+}
+
+#linkList {
+  width: 20em;
+  height: auto;
+  text-align: center;
+}
+
+#headerIcon {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+ul {
+  list-style: none;
+}
+
+#links {
+  text-decoration: none;
+  color: #2C5890;
+  transition-duration: 0.2s;
+}
+
+#links:hover {
+  color: #ECF0F1;
+}
+
+#paragraphContainer {
+  margin-top: -0.5em;
+  margin-left: 14em;
+  width: 20em;
+  height: auto;
+
+  position: absolute;
+  font-size: 1.5em;
+}
+
+#navButton {
+  background-color: #4183D7;
+  color: #ECF0F1;
+  margin-top: 27px;
+  position: relative;
+  font-weight: 300;
+  text-decoration: inherit;
+  font-size: 36px;
+  margin-right: -4px;
+  text-align: center;
+  border: none;
+  transition-duration: 0.4s;
+  padding: 10px;
+  letter-spacing: 1.75px;
+  font-family: 'Roboto';
+  top: 3px;
+}
+
+#navButton:hover {
+  background-color: #3973BD;
+}
+
+#arHeader:hover, #navButton:hover, #pageButton:hover {
+  background-color: #3973BD;
+}
+
+.button {
+  font-size: 36px;
+  margin-right: 10px;
+  text-align: center;
+  border: none;
+  transition-duration: 0.4s;
+  padding: 10px;
+  letter-spacing: 1.75px;
+  text-decoration: inherit;
+
+}
+
+#projectButtonContainer {
+  position: relative;
+  margin-top: 0.5em;
+  margin-left: 21em;
+  width: auto;
+  height: auto;
+}
+
+#pageButton {
+  background-color: #4183D7;
+  color: #ECF0F1;
+  padding: 15px;
+  font-weight: 100;
+  position: relative;
+  margin-bottom: 15px;
+  display: inline-block;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+#calculatorMB, #hereticsMB, #chatv1MB, #chatv2MB, #webglMB {
+  color:  #ECF0F1;
+  background-color: rgba(0,0,0,0.8);
+  border: 1px solid black;
+  font-weight: 300;
+  display: none;
+  width: 350px;;
+  font-size: 20px;
+  z-index: 2;
+  height: auto;
+}
+
+#paragraphMB {
+  margin: 5px 5px 5px 5px;
+}
+
+#pageButton:hover + #calculatorMB {
+  position: absolute;
+  display: inline-block;
+}
+
+#pageButton:hover + #hereticsMB {
+  position: absolute;
+  display: inline-block;
+}
+
+#pageButton:hover + #chatv1MB {
+  position: absolute;
+  display: inline-block;
+}
+
+#pageButton:hover + #chatv2MB {
+  position: absolute;
+  display: inline-block;
+}
+
+#pageButton:hover + #webglMB {
+  position: absolute;
+  display: inline-block;
+}
+
+#glcanvas {
+  margin-left: 20em;
+  z-index: 5;
+  display: block;
+  position: absolute;
+}
+
+form {
+  margin: 20px 20px;
+  margin-left: 21em;
+}
+
+#user {
+  width: 225px;
+}
+
+#user, #message {
+  background-color: #E0E0E0;
+  margin-bottom: 15px;
+  margin-left: 5px;
+  font-size: 36px;
+  border: none;
+  background-color: #fff;
+  padding: 5px;
+}
+
+form #pageButton {
+  padding: 5px;
+  margin-left: 5px;
+  margin-bottom: -30px;
+  font-weight: 100;
+}
+
+#messages {
+  list-style: none;
+}
+
+#chatHead {
+  font-size: 36px;
+  font-weight: 500;
+  margin-left: 9.5em;
+  margin-top: -1px;
+}
+
+#chatList {
+  list-style: none;
+  font-size: 24px;
+  margin-left: 15em;
+}
+
+#chatContainer {
+  width: 100%;
+  height: 600px;
+  overflow-y: scroll;
+  background-color: #CACACA;
+  margin-top: -30px;
+}
+
+#chat2 {
+  width: 100%;
+  height: 600px;
+  overflow-y: scroll;
+  background-color: #CACACA;
+  bottom: 0px;
+  right: 0px;
+  display: none;
+
+}
+
+#chatv2Form {
+  bottom: 0px;
+  display: none;
+}
+
+#head {
+  text-align: center;
+  font-size: 96px;
+  font-weight: 500;
+}
+
+#centerHereticText {
+  text-align: center;
+  font-size: 36px;
+  font-weight: 100;
+
+
+}
+
+#centerHereticText.a {
+    transition-duration: 0.2s;
+    text-decoration: none;
+    color: #478FEB;
+}
+
+.calcBody {
+	background-color: #BDBDBD;
+  width: 785px;
+  height: 485px;
+  position: absolute;
+  margin-left: 21em;
+  margin-top: 1em;
+  font-family: 'Roboto';
+  font-weight: 500;
+  z-index: 1;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.calcAnswerBox {
+	background-color: #ECF0F1;
+  width: 746px;
+  height: 75px;
+  margin-top: 15px;
+  margin-left: 15px;
+  z-index: 2;
+	font-family: 'Roboto';
+	font-size: 24px;
+	color: #2C3E50;
+}
+
+.calcButton {
+  width: 130px;
+  height: 80px;
+  background-color: #5F7187;
+  display: inline-block;
+  margin-left: 15px;
+  margin-top: 15px;
+  margin-right: 5px;
+  color: #ECF0F1;
+  text-align: center;
+  font-weight: 300;
+  font-size: 36px;
+	line-height: 80px;
+	font-weight: 200;
+}
+
+#calcNumberButton {
+  background-color: #5991B1;
+}

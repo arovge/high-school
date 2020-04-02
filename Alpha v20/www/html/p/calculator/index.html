@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+			<script type = "text/javascript" src="/include/header.js"></script>
+			<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+			<script src="/include/calculator.js"></script>
+			<link rel="stylesheet" type="text/css" href="/include/style.css"/>
+			<link href='https://fonts.googleapis.com/css?family=Roboto:500,400,300,100' rel='stylesheet' type='text/css'>
+			<title>calculator</title>
+		</head>
+		<body>
+			<div id="header"></div>
+			<div class="calcBody" ng-app="calc" ng-controller="controller">
+				<div class="calcAnswerBox">{{ answer }}</div>
+				<div class="calcContainerForButtons">
+					<div class="calcButton" id="calcNumberButton" ng-click="addNumber('7')">7</div>
+					<div class="calcButton" id="calcNumberButton" ng-click="addNumber('8')">8</div>
+					<div class="calcButton" id="calcNumberButton" ng-click="addNumber('9')">9</div>
+					<div class="calcButton" ng-click="addSign('+')">+</div>
+					<div class="calcButton" ng-click="addSign('-')">-</div>
+					<div class="calcButton" id="calcNumberButton" ng-click="addNumber('4')">4</div>
+					<div class="calcButton" id="calcNumberButton" ng-click="addNumber('5')">5</div>
+					<div class="calcButton" id="calcNumberButton" ng-click="addNumber('6')">6</div>
+					<div class="calcButton" ng-click="addSign('*')">*</div>
+					<div class="calcButton" ng-click="addSign('/')">/</div>
+					<div class="calcButton"  id="calcNumberButton" ng-click="addNumber('1')">1</div>
+					<div class="calcButton" id="calcNumberButton" ng-click="addNumber('2')">2</div>
+					<div class="calcButton" id="calcNumberButton" ng-click="addNumber('3')">3</div>
+					<div class="calcButton" ng-click="addNumber('.')">.</div>
+					<div class="calcButton" ng-click="efunction()">e</div>
+					<div class="calcButton" id="calcNumberButton" ng-click="addNumber('0')">0</div>
+					<div class="calcButton" ng-click="clear()">CE</div>
+					<div class="calcButton" ng-click="calc()">=</div>
+					<div class="calcButton" ng-click="opposite()">+/-</div>
+					<div class="calcButton" ng-click="pi()">pi</div>
+				</div>
+			</div>
+		</body>
+	</html>

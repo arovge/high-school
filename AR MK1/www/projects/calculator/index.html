@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+	<html lang="en">
+		<head>
+			<meta charset="utf-8">
+			<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+			<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+			<!-- first three tags -->
+			<script src="/js/jquery-3.0.0.min.js"></script>
+			<script type = "text/javascript" src="/js/header.js"></script>
+			<script src="/js/angular.min.js"></script>
+			<script src="/js/calculator.js"></script>
+			<link rel="stylesheet" type="text/css" href="/css/test.css"/>
+			<title>Calculator</title>
+		</head>
+		<body>
+			<div id="header"></div>
+			<div id="contentContainer">
+			<div class="calcBody noSelect" ng-app="calc" ng-controller="controller">
+				<div class="calcAnswerBox">{{ answer }}</div>
+				<div class="calcContainerForButtons">
+					<div class="calcButton" id="calcNumberButton" ng-click="addNumber('7')">7</div>
+					<div class="calcButton" id="calcNumberButton" ng-click="addNumber('8')">8</div>
+					<div class="calcButton" id="calcNumberButton" ng-click="addNumber('9')">9</div>
+					<div class="calcButton" ng-click="addSign('+')">+</div><br>
+					<div class="calcButton" id="calcNumberButton" ng-click="addNumber('5')">5</div>
+					<div class="calcButton" id="calcNumberButton" ng-click="addNumber('4')">4</div>
+					<div class="calcButton" id="calcNumberButton" ng-click="addNumber('6')">6</div>
+					<div class="calcButton" ng-click="addSign('-')">-</div><br>
+					<div class="calcButton"  id="calcNumberButton" ng-click="addNumber('1')">1</div>
+					<div class="calcButton" id="calcNumberButton" ng-click="addNumber('2')">2</div>
+					<div class="calcButton" id="calcNumberButton" ng-click="addNumber('3')">3</div>
+					<div class="calcButton" ng-click="addSign('/')">/</div><br>
+					<div class="calcButton" id="calcNumberButton" ng-click="addNumber('0')">0</div>
+					<div class="calcButton" ng-click="addNumber('.')">.</div>
+					<div class="calcButton" ng-click="efunction()">e</div>
+					<div class="calcButton" ng-click="addSign('*')">*</div><br>
+					<div class="calcButton" ng-click="clear()">CE</div>
+					<div class="calcButton" ng-click="calc()">=</div>
+					<div class="calcButton" ng-click="opposite()">+/-</div>
+					<div class="calcButton" ng-click="pi()">pi</div>
+				</div>
+			</div>
+		</div>
+		</body>
+	</html>

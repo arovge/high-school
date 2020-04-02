@@ -1,0 +1,11 @@
+{
+  "name": "mainserver",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {
+    "express": "*",
+    "mysql": "*",
+    "socket.io": "*"
+    }
+}

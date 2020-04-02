@@ -1,0 +1,26 @@
+<div class="calcBody noSelect" ng-app="calculatorApp" ng-controller="calculatorController">
+	<div class="calcAnswerBox">{{ answer }}</div>
+	<div class="calcContainerForButtons">
+		<div class="calcButton" id="calcNumberButton" ng-click="addNumber('7')">7</div>
+		<div class="calcButton" id="calcNumberButton" ng-click="addNumber('8')">8</div>
+		<div class="calcButton" id="calcNumberButton" ng-click="addNumber('9')">9</div>
+		<div class="calcButton" ng-click="addSign('+')">+</div><br>
+		<div class="calcButton" id="calcNumberButton" ng-click="addNumber('5')">5</div>
+		<div class="calcButton" id="calcNumberButton" ng-click="addNumber('4')">4</div>
+		<div class="calcButton" id="calcNumberButton" ng-click="addNumber('6')">6</div>
+		<div class="calcButton" ng-click="addSign('-')">-</div><br>
+		<div class="calcButton"  id="calcNumberButton" ng-click="addNumber('1')">1</div>
+		<div class="calcButton" id="calcNumberButton" ng-click="addNumber('2')">2</div>
+		<div class="calcButton" id="calcNumberButton" ng-click="addNumber('3')">3</div>
+		<div class="calcButton" ng-click="addSign('/')">/</div><br>
+		<div class="calcButton" id="calcNumberButton" ng-click="addNumber('0')">0</div>
+		<div class="calcButton" ng-click="addNumber('.')">.</div>
+		<div class="calcButton" ng-click="efunction()">e</div>
+		<div class="calcButton" ng-click="addSign('*')">*</div><br>
+		<div class="calcButton" ng-click="clear()">CE</div>
+		<div class="calcButton" ng-click="calc()">=</div>
+		<div class="calcButton" ng-click="opposite()">+/-</div>
+		<div class="calcButton" ng-click="pi()">pi</div>
+	</div>
+</div>
+<script src="/js/calculator.js"></script>

@@ -1,0 +1,115 @@
+body {
+  background-color: #3F3F3F;
+  color: #EEEEEE;
+  font-family: Roboto, sans-serif;
+  outline: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* Roboto Font CSS */
+@font-face { font-family: Roboto; src: url('/css/Roboto-Regular.ttf'); }
+@font-face { font-family: Roboto-Thin; src: url('/css/Roboto-Thin.ttf'); }
+
+/* Scrollbar CSS */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track-piece {
+  background-color: #ffffff;
+  -webkit-border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:vertical {
+  height: 6px;
+  background-color: #666;
+  -webkit-border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+  width: 6px;
+  background-color: #666;
+  -webkit-border-radius: 6px;
+}
+
+.noSelect {
+  user-select: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -o-user-select: none;
+}
+
+#header {
+  left: 0px;
+  top: 0px;
+
+
+  background-color: #47D2E9;
+  width: 100%;
+  height: 200px;
+  box-shadow: 0px 0px 16px 4px rgba(0,0,0,0.15);
+  position: absolute;/* maybe fixed? */
+  display: block;
+
+  color: #EEEEEE;
+
+
+  line-height: 200px;
+
+}
+
+#headerText {
+  font-family: Roboto-Thin;
+  font-size: 48px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 25px;
+  letter-spacing: 5px;
+  /*text-shadow: 0px 0px 20px #3F3F3F;*/
+  width: 683px;
+  margin-right: 0px;
+}
+
+#iconNav {
+  background: url(/includes/icons.svg);
+  width: 286px;
+  height: 72px;
+  float: right;
+  margin-right: 25px;
+  margin-top: -130px;
+}
+
+#ulNav {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+}
+
+.icon-socialFB {
+  width: 60px;
+  height: 72px;
+
+}
+
+#linkfb {
+  transition-duration: 0.3s;
+  background-position: 0 0;
+  transition-property: background;
+}
+
+#linkfb:hover {
+  background-position: 0 -72px;
+  cursor: crosshair;
+}
+
+#fb-icon {
+  background-position: 0 0;
+}
+
+#fb-icon:hover {
+  background-position: 0 -72px;
+}

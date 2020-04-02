@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+      <script type="text/javascript" src="/include/header.js"></script>
+      <link rel="stylesheet" type="text/css" href="/include/style.css">
+      <link href='https://fonts.googleapis.com/css?family=Roboto:500,400,300,100' rel='stylesheet' type='text/css'>
+      <title>chat v2</title>
+    </head>
+    <body>
+      <div id="header"></div>
+      <div id="chat2"></div>
+      <form id="chatv2Form">
+        <input type="text" placeholder="username" name="user" id="user">
+				<input type="text" placeholder="message" name="message" id="message">
+        <button type="submit" class="button" id="pageButton">submit</button>
+      </form>
+	<script src="/socket.io/socket.io.js"></script><!--not made it just redirects something something said nick-->
+  <!--<script src="/node_modules/socket.io-client/socket.io.js"></script>-->
+      <script>
+      //var socket = io.connect('https://localhost:8080');
+      var socket = io.connect();//io is unreferenced from source not laoding?
+      </script>
+    </body>
+  </html>

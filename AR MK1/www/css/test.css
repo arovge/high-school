@@ -1,0 +1,599 @@
+body {
+  background-color: #3F3F3F;
+  color: #EEEEEE;
+  font-family: Roboto, Georgia;/*sans-serif;*/
+  outline: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* Roboto Font CSS */
+@font-face { font-family: Roboto; src: url('/css/Roboto-Regular.ttf'); }
+  @font-face { font-family: Roboto-Thin; src: url('/css/Roboto-Thin.ttf'); }
+
+/* Scrollbar CSS */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track-piece {
+  background-color: #ffffff;
+  -webkit-border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:vertical {
+  height: 6px;
+  background-color: #666;
+  -webkit-border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+  width: 6px;
+  background-color: #666;
+  -webkit-border-radius: 6px;
+}
+
+/* CSS Class for disabling Selection */
+.noSelect {
+  user-select: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -o-user-select: none;
+}
+
+/* Header CSS */
+#header {
+  left: 0px;
+  top: 0px;
+  bottom: 0px;
+  width: 320px;
+  height: 100%;
+  background-color: #3498DB;
+  box-shadow: 0px 0px 16px 4px rgba(0,0,0,0.15);
+  position: absolute;
+  display: block;
+}
+
+#headerIconDiv {
+  width: 105px;
+  height: 113px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 60px;
+}
+
+#headerIcon {
+  margin-top: 50px;
+  /* margin left/right auto? */
+  margin-bottom: 2.75rem;
+  border: 0;
+  display: block;
+  width: 105px;/* 80*/
+  height: 113px;
+  padding: 0px 0px;
+
+  box-sizing: border-box;
+  -webkit-transition: -webkit-transform .6s cubic-bezier(.68,-.55,.265,1.55);
+  transition: -webkit-transform .6s cubic-bezier(.68,-.55,.265,1.55);
+  transition: transform .6s cubic-bezier(.68,-.55,.265,1.55);
+  transition: transform .6s cubic-bezier(.68,-.55,.265,1.55),-webkit-transform .6s cubic-bezier(.68,-.55,.265,1.55);
+  border-bottom-left-radius:0px;
+  border-bottom-right-radius:0px;
+  border-top-left-radius:0px;
+  border-top-right-radius:0px;
+}
+
+#headerIcon:hover {
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+#navOnSite {
+  width: 320px;
+  height: auto;
+  text-align: center;
+display: block;
+  font-size: 16px;
+}
+
+#ulHeader {
+  padding-left: 0px;
+  list-style: none;
+}
+
+.liHeader {
+  margin-bottom: 15px;
+}
+
+.links {
+  text-decoration: none;
+  color: #2C5890;
+  transition-duration: 0.2s;
+  list-style: none;
+  /* margin left/right auto? */
+}
+
+.links:hover {
+  color: #ECF0F1;
+}
+
+#linksActive {
+  color: #ECF0F1;
+}
+
+#lastItem {
+  margin-right: 0px;
+}
+
+#contentContainer {
+  margin-left: 340px;
+  margin-top: 10px;
+  margin-right: 20px;
+  width: auto;
+  height: 100%;
+  display: inline-block;
+}
+/* 404 error */
+#errorLink {
+  text-decoration: underline;
+  color: #EEEEEE;
+
+}
+
+
+
+#contentBox {
+  margin-left: 350px;
+  width: 300px;
+  height: auto;
+  margin-top: 25px;
+}
+
+#jobs {
+  margin-right: 15px;
+  display: inline-block;
+  background-color: #E0E0E0;
+  height: 50px;
+  width: 50px;
+  padding: 10px;
+  font-family: Roboto-Thin;
+  font-size: 32px;
+  color: #3F3F3F;
+  transition-duration: 0.3s;
+  margin-bottom: 1px;
+}
+
+#jobs:hover {
+  background-color: #3498DB;
+
+}
+
+#bonusContainer {
+  margin-top: 49px;
+  background-color: #E0E0E0;
+  width: 480px;
+  font-family: Roboto-Thin;
+  height: auto;
+  padding: 10px;
+  color: #3F3F3F;
+  font-size: 32px;
+}
+
+/* Front Page CSS */
+#paragraphText {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-size: 16px;
+}
+
+/*applet css*/
+#applet {
+  margin-top: 250px;
+}
+
+/* Projects CSS */
+.pageButton {
+  font-family: Roboto-Thin, sans-serif;
+  margin-left: 0px;
+  margin-right: 10px;
+  /*margin-top: 10px;*/
+  background-color: #3498DB;
+  color: #ECF0F1;
+  padding: 15px;
+  font-weight: 100;
+  position: relative;
+  margin-bottom: 15px;
+  display: inline-block;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.13);
+  text-decoration: none;
+  font-size: 32px;
+  transition-duration: 0.4s;
+}
+
+.pageButton:hover {
+  background-color: #2C82BB;
+}
+
+/* Yellow */
+#beta {
+  background-color: #D7C141;
+}
+
+#beta:hover {
+  background-color: #BCA939;
+}
+
+/* Orange */
+#alpha {
+  background-color: #D79D41;
+}
+
+#alpha:hover {
+  background-color:  #B98738;
+}
+
+/* Red */
+#disabled {
+  background-color: #D74159;
+}
+
+#disabled:hover {
+  background-color: #BC394E;
+  cursor: pointer;
+}
+
+/* Heretics CSS */
+#hereticHeader {
+  color: #3498DB;
+  text-align: center;
+  font-size: 96px;
+  font-weight: 500;
+  margin-top: 0px;
+  margin-bottom: 50px;
+}
+
+#centerHereticText {
+  text-align: center;
+  font-size: 36px;
+  font-family: Roboto-Thin, sans-serif;
+}
+
+#hereticLink {
+  transition-duration: 0.4s;
+  text-decoration: none;
+  color: #D74159;
+  transition-duration: 0.4s;
+}
+
+#hereticLink:hover {
+  color: black;
+}
+
+/* Chatv2 CSS */
+#chatForm {
+  display: none;
+  bottom: 0px;
+  margin-left: 340px;
+}
+
+#realPageButton {
+  border: none;
+  background-color: #4183D7;
+  color:  #ECF0F1;
+  padding: 15px;
+  font-weight: 100;
+  font-size: 24px;
+  transition-duration: 0.2s;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.075);
+}
+
+#realPageButton:hover {
+  background-color: #3973BD;
+}
+
+#user {
+  margin-top: 15px;
+  margin-left: 340px;
+}
+
+#message {
+  bottom: 0px;
+  margin-bottom: 15px;
+}
+
+#user, #message {
+  width: 340px;
+  height: 45px;
+  outline: none;
+  border: none;
+  font-size: 24px;
+  background-color: #E0E0E0;
+  padding: 5px;
+  transition-duration: 0.2s;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.075);
+  margin-right: 10px;
+}
+
+#user:focus, #message:focus {
+  background: transparent;
+  box-shadow: none;
+}
+
+#chatContainer {
+  width: 100%;
+  height: 600px;
+  overflow-y: scroll;
+  background-color: #CACACA;
+  top: 0px;
+  left: 0px;
+  display: none;
+}
+
+#chatListItem {
+  list-style: none;
+  font-size: 24px;
+  margin-left: 345px;
+  border-left: 2px solid #00f28f;
+  margin-bottom: 5px;
+  margin-top: 2.5px;
+  padding-left: 20px;
+}
+
+/* Canvas CSS */
+#canvas {
+  position: absolute;
+  top: 10px;
+  left: 335px;
+  background-color:#1d1d1d;
+  /* Height and Width are defined in the <canvas> tags otherwise it is blurry */
+}
+
+/* Calculator CSS */
+.calcBody {
+	background-color: #BDBDBD;
+  width: 625px;
+  height: 580px;
+  margin: 0 auto;
+  position: static;
+  margin-top: 10px;
+  top: 0px;
+  z-index: 1;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.13);
+}
+
+.calcAnswerBox {
+	background-color: #ECF0F1;
+  width: 591px;
+  height: 75px;
+  margin-top: 20px;
+  margin-left: 15px;
+  z-index: 2;
+	font-size: 24px;
+	color: #2C3E50;
+  position: absolute;
+}
+
+.calcContainerForButtons {
+  margin-top: 95px;
+  margin-bottom: 5px;
+  position: absolute;
+}
+
+.calcButton {
+  width: 130px;
+  height: 80px;
+  background-color: #5F7187;
+  display: inline-block;
+  margin-left: 15px;
+  margin-top: 15px;
+  margin-right: 5px;
+  color: #ECF0F1;
+  text-align: center;
+  font-weight: 300;
+  font-size: 36px;
+	line-height: 80px;
+	font-weight: 200;
+  font-family: Roboto-Thin, sans-serif;
+}
+
+#calcNumberButton {
+  background-color: #5991B1;
+}
+
+/* Mobile CSS */
+@media (max-width: 840px) {
+
+    /* Mobile Header CSS */
+    #header {
+      width: 100%;
+      height: 200px;
+      position: absolute;
+      display: block;
+      left: 0px;
+      top: 0px;
+      bottom: 0px;
+    }
+
+    #headerIcon {
+      margin-top: 25px;
+	    margin-bottom: 0px;
+    }
+
+    #headerIconDiv {
+      margin-bottom: 7px;
+    }
+
+    #navOnSite {
+      margin-top: 15px;
+      width: auto;
+      height: auto;
+    }
+
+    #ulHeader {
+      width: auto;
+      height: auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .liHeader {
+      text-align: center;
+      width: auto;
+      margin-bottom: 0px;
+      margin-right: 25px;
+    }
+
+    #lastItem {
+      margin-right: 0px;
+    }
+
+    #contentContainer {
+      margin-left: 10px;
+      margin-right: 10px;
+      margin-top: 215px;
+      width: auto;
+      height: auto;
+      display: inline-block;
+    }
+
+    /* Mobile Content CSS */
+    .pageButton {
+      margin-left: 0px;
+      margin-right: 5px;
+    }
+
+    /* Mobile Chatv2 CSS */
+    #user {
+      margin-top: 210px;
+      margin-left: auto;/*10px;*/
+      margin-right: auto;
+    }
+
+    #realPageButton {
+      display: none;
+    }
+
+    #chatForm {
+      margin-left: 0px;
+    }
+
+    #message {
+      margin-top: 10px;
+      margin-left: 10px;
+    }
+
+    #chatListItem {
+      margin-left: 15px;
+      margin-top: 10px;
+      margin-bottom: -5px;
+      font-size: 16px;
+    }
+
+    #chatContainer {
+      margin-top: 200px;
+    }
+
+    /* Mobile Canvas CSS */
+    #canvas {
+      left: 0px;
+      margin-top: 190px;
+    }
+
+    /* Mobile Heretic CSS */
+    #hereticHeader {
+      font-size: 54px;
+      margin-bottom: 0px;
+    }
+
+    #centerHereticText {
+      margin-top: 15px;
+      font-size: 32px;
+    }
+
+    /* Mobile Calculator CSS */
+    .calcBody {
+      margin-left: 15px;
+      margin-right: 15px;
+      width: 90%;
+      height: 55%;
+    	background-color: #BDBDBD;
+
+      position: absolute;
+
+      margin-top: 215px;
+      font-weight: 500;
+      z-index: 1;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.13);
+    }
+
+    .calcAnswerBox {
+    	background-color: #ECF0F1;
+      margin-right: 15px;
+      width: 85%;
+      height: 50px;
+      margin-top: 15px;
+      margin-left: 15px;
+      margin-bottom: 20px;
+      z-index: 2;
+    	font-size: 24px;
+    	color: #2C3E50;
+    }
+
+    .calcContainerForButtons {
+      margin-top: 90px;
+    }
+
+    .calcButton {
+      width: 60px;
+      height: 40px;
+      background-color: #5F7187;
+      display: inline-block;
+      margin-left: 15px;
+      margin-top: -5px;
+      margin-right: -5px;
+      margin-bottom: 15px;
+      color: #ECF0F1;
+      text-align: center;
+      font-size: 18px;
+    	line-height: 40px;
+    	font-weight: 200;
+    }
+
+    #contentBox {
+      margin-left: 15px;
+      width: 100%;
+      height: auto;
+      margin-top: 225px;
+    }
+
+    #jobs {
+      margin-right: 5px;
+      display: inline-block;
+      background-color: #E0E0E0;
+      height: 50px;
+      width: 50px;
+      padding: 5px;
+      font-family: Roboto-Thin;
+      font-size: 28px;
+      color: #3F3F3F;
+      transition-duration: 0.3s;
+      margin-bottom: 1px;
+
+    }
+
+    #bonusContainer {
+      margin-top: 49px;
+      background-color: #E0E0E0;
+      width: 80%;
+      font-family: Roboto-Thin;
+      height: auto;
+      padding: 5px;
+      color: #3F3F3F;
+      font-size: 32px;
+
+}

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+	<html lang="en">
+		<head>
+			<meta charset="utf-8">
+			<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+			<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+			<!-- first three tags -->
+			<base href="/">
+			<link rel="stylesheet" type="text/css" href="/css/test.css">
+			<title>AR</title>
+		</head>
+		<body ng-controller="controller" ng-app="app">
+			<div id="header">
+				<img class="centerVertically noSelect" id="headerImg" src="/includes/real_escape_logo.png" />
+				<!--<a href="projects"><p class="centerVertically noSelect" id="headerNavText">PROJECTS 1</p></a>-->
+				<a onclick="projects()"><p class="centerVertically noSelect" id="headerNavText">PROJECTS</p></a>
+				<a href="projects" id="projectsTag"></a>
+			</div>
+			<div id="contentContainer">
+				<div ng-view></div>
+			</div>
+		</body>
+		<script src="/js/jquery-3.0.0.min.js"></script>
+		<script src="/js/angular.min.js"></script>
+		<script src="/js/angular-route.js"></script>
+		<script src="/js/routing.js"></script>
+    <script type="text/javascript">
+		$(window).resize(function() {
+			/*futureHeaderHeight = $(window).height();
+			headerHeight = futureHeaderHeight / 4;
+			console.log(headerHeight);
+			headerImgHeight = headerHeight / 5;
+			$('#headerImg').css({height:headerImgHeight});*/
+
+			//fix so on resize image height changes too
+
+
+			//headerHeight = $('#header').height();
+			futureHeaderHeight = $(window).height();
+			headerHeight = futureHeaderHeight / 4;
+			console.log(headerHeight);
+			marginHeight = headerHeight + 15;
+			$('#contentContainer').css({"margin-top":marginHeight});
+			console.log($('#contentContainer').css("margin-top"));
+		});
+
+		$(document).ready(function() {
+			headerAnimation();
+		});
+
+		var headerHeight;
+		var marginHeight;
+		var headerImgHeight;
+		var futureHeaderHeight;
+		var defaultImgHeight = $('#headerImg').height();
+		console.log(defaultImgHeight);
+
+
+		function projects() {
+			console.log('test');
+			$('#headerNavText').css({"cursor":"default","pointer-events":"none"});
+			$('#headerNavText').delay(100).animate({
+				opacity: 0
+			}, 200, function() {
+				console.log($('#headerImg').offset());
+				$('#headerImg').delay(100).animate({
+					"left": "50%",
+					//SUPER HACKY BUT AUTO ISNT A NUMBER SO JQUERY CANNOT ANIMATE IT
+					"margin-left": -$('#headerImg').width()/2
+				}, 650, function() {
+					$('#headerImg').css({"margin-left":"auto","margin-right":"auto","left":"0px"});
+						$('#header').animate({
+							height: "80%"
+						}, 1000, function() {
+							$('#header').animate({
+								height: "75%"
+							}, 350/*250 in original*/, function() {
+								console.log('header reverse animation complete');
+								$('#projectsTag')[0].click();
+								headerAnimation();
+							});
+						});
+						$('#headerImg').animate({
+							height: defaultImgHeight
+						}, 1000, function() {
+							//animation
+						});
+				});
+			});
+		}
+
+		var windowHeaderHeight = $(window).height();
+
+		function headerAnimation() {
+			headerHeight = windowHeaderHeight / 4;
+			marginHeight = headerHeight + 15;
+			$('#contentContainer').css({"margin-top":marginHeight});
+			$('#header').delay(200).animate({
+				height: "80%",
+			}, 250, function() {
+				$('#header').animate({
+					height: "25%"
+				}, 1000, function() {
+					$('#headerImg').delay(100).animate({
+						"margin-left": "30px",//maybe 15px
+						"margin-right": "0px"
+					}, 650, function() {
+						$('#headerNavText').delay(100).animate({
+							opacity: 1
+						}, 200, function() {
+							$('#headerNavText').css({"cursor":"pointer","pointer-events":"auto"});
+							console.log('header animation complete');
+						});
+					});
+				});
+				futureHeaderHeight = $(window).height();
+				headerHeight = futureHeaderHeight / 4;
+				console.log(headerHeight);
+				headerImgHeight = headerHeight / 1.5;
+				$('#headerImg').animate({
+					height: headerImgHeight//'150px'
+				}, 1000, function() {
+					//animation
+				});
+			});
+		}
+		</script>
+	</html>

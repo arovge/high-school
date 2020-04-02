@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+	<html lang="en">
+		<head>
+			<meta charset="utf-8">
+			<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+			<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+			<!-- first three tags -->
+      <script src="/js/jquery-3.0.0.min.js"></script>
+      <script type="text/javascript" src="/js/header.js"></script>
+      <link rel="stylesheet" type="text/css" href="/css/test.css">
+      <title>Chat v2</title>
+    </head>
+    <body>
+      <div id="header"></div>
+      <form id="usernameForm">
+        <input type="text" placeholder="username" name="user" id="user">
+        <button type="submit" class="button" id="realPageButton">submit</button>
+      </form>
+			<!--<div id="usernameList"></div>-->
+      <div id="chatContainer"></div>
+      <form id="chatForm">
+				<input type="text" placeholder="message" name="message" id="message">
+        <button type="submit" class="button" id="realPageButton">submit</button>
+      </form>
+
+    	<script src="/socket.io/socket.io.js"></script>
+      <script>
+        $(function() {
+          var socket = io.connect();
+          var $messageForm = $('#chatForm');
+          var $message = $('#message');
+
+          var $chat =  $('#chatContainer');
+
+          var $usernameForm = $('#usernameForm');
+          var $username = $('#user');
+
+					var $usernames = $('#usernameList');
+          var $messageArea = $('#chatContainer');
+          var $messageAreaForm = $('#chatForm');
+          $usernameForm.show();
+          $messageArea.hide();
+          $messageAreaForm.hide();
+
+          $messageForm.submit(function(e) {
+              e.preventDefault();
+              socket.emit('send message', $message.val());
+              $message.val('');
+          });
+
+          socket.on('new message', function(data) {
+            $chat.append('<li id="chatListItem"><strong>' + stripHTML(data.user) + '</strong>  -  ' + stripHTML(data.msg) + '</li>');
+						updateScroll();
+          });
+
+          $usernameForm.submit(function(e) {
+            e.preventDefault();
+            socket.emit('new user', $username.val(), function(data) {
+              if (data) {
+                $usernameForm.hide();
+                $messageArea.show();
+                $messageAreaForm.show();
+              }
+            });
+						updateScroll();
+          });
+
+          socket.on('get users', function(data) {
+            var html = '';
+            for (var i = 0; i < data.length; i++) {
+              html += '<li id="usernames">' + data[i] + '</li>';
+            }
+            $usernames.html(html);
+          });
+
+					function stripHTML(dirtyString) {
+						var container = document.createElement('div');
+						var text = document.createTextNode(dirtyString);
+						container.appendChild(text);
+						return container.innerHTML; // innerHTML will be a xss safe string
+					}
+
+					function updateScroll() {
+						//$('#chatContainer').animate({scrollTop:1E10}, 1000);
+						$('#chatContainer').scrollTop(1E10);
+					}
+				});
+      </script>
+    </body>
+  </html>

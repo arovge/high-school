@@ -1,0 +1,273 @@
+/* Roboto Font CSS */
+@font-face { font-family: Roboto; src: url('/assets/Roboto/Roboto-Regular.ttf'); }
+@font-face { font-family: Roboto-Thin; src: url('/assets/Roboto/Roboto-Thin.ttf'); }
+
+/* Scrollbar CSS */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track-piece {
+  background-color: #ffffff;
+  -webkit-border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:vertical {
+  height: 6px;
+  background-color: #666;
+  -webkit-border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+  width: 6px;
+  background-color: #666;
+  -webkit-border-radius: 6px;
+}
+
+/* Anti-Aliasing */
+*, *:after, *:before {
+    margin: 0 auto;
+    padding: 0;
+    border: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    -o-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+  background-color: #3F3F3F;
+  color: #EEEEEE;
+  font-family: Roboto, sans-serif;
+  outline: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* CSS Classes for General Tasks */
+.noSelect {
+  user-select: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -o-user-select: none;
+}
+
+.centerVertically {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Header CSS */
+#header {
+  left: 0px;
+  top: 0px;
+
+  height: 75%;
+  min-height: 50px;
+  width: 100%;
+  z-index: 1;
+  margin-bottom: 0px;
+
+  background-color: #3498DB;
+  box-shadow: 0px 0px 16px 4px rgba(0,0,0,0.15);
+
+  position: absolute;
+  display: inline-block;
+
+  font-size: 32px;
+}
+
+.headerNavText {
+  font-family: Roboto-Thin, sans-serif;
+  font-size: 36px;
+  position: relative;
+  display: inline-block;
+  margin-right: 30px;
+  padding: 10px;
+
+  transition-duration: 0.3s;
+  color: white;
+  text-decoration: none;
+  cursor: initial;
+  pointer-events: none;
+  vertical-align: middle;
+}
+
+.headerNavText:hover {
+  background-color: #2C82BB;
+}
+
+#lastHeaderNavText {
+  margin-right: 0px;
+}
+
+#headerImg {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+#headerNavContainer {
+  opacity: 0;
+  text-align: center;
+  position: absolute;
+  width: 100%;
+}
+
+#headerNavButton {
+  z-index: 5;
+  right: 0px;
+  margin-right: 3.5%;
+  height: 75px;
+  opacity: 0;
+  position: absolute;
+  margin-top: 3.5%;
+}
+
+#contentContainer {
+  /*margin-top: calc(15px + 25%);
+  margin-top: -webkit-calc(25% + 15px);
+  doesn't work for some reason so jquery is used instead */
+
+  display: inline-block;
+  opacity: 1;
+  margin-left: 15px;
+  margin-right: 15px;
+  width: auto;
+  height: auto;
+  font-size: 18px;
+}
+
+/* Projects CSS */
+.pageButton {
+  font-family: Roboto-Thin, sans-serif;
+  margin-left: 0px;
+  margin-right: 10px;
+  /*margin-top: 10px;*/
+  background-color: #3498DB;
+  color: #ECF0F1;
+  padding: 15px;
+  font-weight: 100;
+  position: relative;
+  margin-bottom: 15px;
+  display: inline-block;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.13);
+  text-decoration: none;
+  font-size: 32px;
+  transition-duration: 0.4s;
+  z-index: 0;
+}
+
+.pageButton:hover {
+  background-color: #2C82BB;
+}
+
+/* Yellow */
+#beta {
+  background-color: #D7C141;
+}
+
+#beta:hover {
+  background-color: #BCA939;
+}
+
+/* Orange */
+#alpha {
+  background-color: #D79D41;
+}
+
+#alpha:hover {
+  background-color:  #B98738;
+}
+
+/* Red */
+#disabled {
+  background-color: #D74159;
+}
+
+#disabled:hover {
+  background-color: #BC394E;
+  cursor: pointer;
+}
+
+/* Calculator CSS */
+.calcBody {
+	background-color: #BDBDBD;
+  width: 625px;
+  height: 580px;
+  margin: 0 auto;
+  position: static;
+  margin-top: 10px;
+  top: 0px;
+  z-index: 1;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.13);
+}
+
+.calcAnswerBox {
+	background-color: #ECF0F1;
+  width: 591px;
+  height: 75px;
+  margin-top: 20px;
+  margin-left: 15px;
+  z-index: 2;
+	font-size: 24px;
+	color: #2C3E50;
+  position: absolute;
+}
+
+.calcContainerForButtons {
+  margin-top: 95px;
+  margin-bottom: 5px;
+  position: absolute;
+}
+
+.calcButton {
+  width: 130px;
+  height: 80px;
+  background-color: #5F7187;
+  display: inline-block;
+  margin-left: 15px;
+  margin-top: 15px;
+  margin-right: 5px;
+  color: #ECF0F1;
+  text-align: center;
+  font-weight: 300;
+  font-size: 36px;
+	line-height: 80px;
+	font-weight: 200;
+  font-family: Roboto-Thin, sans-serif;
+}
+
+#calcNumberButton {
+  background-color: #5991B1;
+}
+
+@media (max-width: 650px) {
+  #headerImg {
+    height: 250px;
+  }
+}
+
+@media (max-width: 631px) {
+  #headerImg {
+    height: 200px;
+  }
+  .headerNavText {
+    opacity: 0 !important;
+  }
+  #headerNavButton {
+    opacity: 1;
+  }
+  #navDropdownButton {
+    opacity: 1;
+    height: 50px;
+  }
+}

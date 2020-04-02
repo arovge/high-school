@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+	<html lang="en">
+		<head>
+			<meta charset="utf-8">
+			<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+			<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+			<!-- first three tags -->
+			<base href="/">
+			<link rel="stylesheet" type="text/css" href="/css/style.css">
+			<title>AR</title>
+		</head>
+    <body>
+			<div id="header">
+				<div id="nav-icon">
+				  <span></span>
+				  <span></span>
+				  <span></span>
+				  <span></span>
+				</div>
+        <p class="centerVertically noSelect" id="headerCenterText">&lt;a /&gt;</p>
+			</div>
+			<div id="nav-menu">
+      <div id="secondContainer">
+				<p id="secondContainerText">Hi. Welcome<br>to my site.</p>
+				<div class="centerVertically" id="secondContainerTextContainer"><p id="secondContainerAboutText">I'm a 17 year old currently in High School. I'm deepely interested in computers and will most likely go to college to major in Computer Science or something similar. I'm also on my high school's robotics team where I do web stuff with my friends.</p>
+			</div></div>
+			<div id="thirdContainer">
+				<p id="thirdContainerBigText">Feel free to browse.</p>
+				<div class="centerVertically" id="thirdContainerSmallTextContainer">
+					<p id="thirdContainerSmallText">My site has various web projects, a contact section, and more for you to browse at your leisure. Have fun checking it out!</p>
+			</div>
+			</div>
+		</div>
+      <script src="/js/dependencies/angular.min.js"></script>
+  		<script src="/js/dependencies/angular-route.min.js"></script>
+  		<script src="/js/routing.js"></script>
+  		<script src="/js/dependencies/jquery-3.1.0.min.js"></script>
+			<script type="text/javascript">
+			$(document).ready(function(){
+				var bad = 0;
+				$('#nav-icon').click(function(){
+					$(this).toggleClass('open');
+					if (bad == 0) {
+					$('#nav-menu').delay(100).animate({
+						"opacity":"0.85"
+					}, 200, function() {
+						bad = 1;
+					});
+				} else {
+					$('#nav-menu').delay(100).animate({
+						"opacity":"0"
+					}, 200, function() {
+						bad = 0;
+					});
+				}
+				});
+			});
+			</script>
+    </body>
+  </html>

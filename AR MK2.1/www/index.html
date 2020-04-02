@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+	<html lang="en">
+		<head>
+			<meta charset="utf-8">
+			<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+			<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+			<!-- first three tags -->
+			<base href="/">
+			<link rel="stylesheet" type="text/css" href="/css/style.css">
+			<title>AR</title>
+		</head>
+		<body ng-controller="mainController" ng-app="mainApp">
+			<div id="header">
+				<img class="centerVertically noSelect" id="headerImg" src="/assets/real_escape_logo.png" />
+				<div class="centerVertically noSelect" id="headerNavContainer">
+					<a onclick="headerLinks('a')"><p class="headerNavText">ABOUT</p></a>
+					<a href="/" id="aboutTag"></a>
+					<a onclick="headerLinks('p')"><p class="headerNavText">PROJECTS</p></a>
+					<a href="/projects" id="projectsTag"></a>
+					<a onclick="headerLinks('c')"><p class="headerNavText" id="lastHeaderNavText">CONTACT</p></a>
+					<a href="/contact" id="contactTag"></a>
+				</div>
+				<img class="centerVertically noSelect" id="headerNavButton" src="/assets/navDropdownButton.svg" />
+			</div>
+			<div id="contentContainer">
+				<div ng-view></div>
+			</div>
+		</body>
+		<script src="/js/dependencies/angular.min.js"></script>
+		<script src="/js/dependencies/angular-route.min.js"></script>
+		<script src="/js/routing.js"></script>
+		<script src="/js/dependencies/jquery-3.1.0.min.js"></script>
+    <script type="text/javascript">
+		var windowHeight = $(window).height();
+
+		var headerHeight = windowHeight / 4;
+		var marginHeight;
+		var headerImgHeight = headerHeight / 1.5;
+		var futureHeaderHeight;
+		var defaultImgHeight = $('#headerImg').height();
+		headerHeight = (windowHeight / 100) * 15;//4;
+		marginHeight = headerHeight + 15;
+		var documentHeight
+		$('#contentContainer').css({"margin-top":marginHeight});
+
+		function headerLinks(e) {
+			$('.headerNavText').css({"cursor":"default","pointer-events":"none"});
+			$('#headerNavContainer').animate({
+				opacity: "0"
+			}, 500, function () {
+				$('#header').animate({
+					height: '80%'
+				}, 1000, function() {
+					$('#header').animate({
+						height: '75%'
+					}, 250, function() {
+						//animation DO NOT USE
+					});
+				});
+				$('#headerImg').animate({
+					opacity: '1',
+					height: defaultImgHeight
+				}, 1000, function() {
+					//animation
+					switch (e) {
+						case 'a':
+							$('#aboutTag')[0].click();
+							break;
+						case 'p':
+							$('#projectsTag')[0].click();
+							break;
+						case 'c':
+							$('#contactTag')[0].click();
+							break;
+					}
+					/*if (e == 'a') {
+						$('#aboutTag')[0].click();
+					} else if (e == 'p') {
+						$('#projectsTag')[0].click();
+					} else if (e == 'c') {
+						$('#contactTag')[0].click();
+					}*/
+					headerAnimation();
+				});
+			});
+		}
+
+		function headerAnimation() {
+			$('#header').delay(200).animate({
+				height: '80%'
+			}, 250, function() {
+				$('#header').animate({
+					height: "15%"//"25%"
+				}, 1000, function() {
+					$('#headerNavContainer').animate({
+						opacity: "1"
+					}, 500, function() {
+						//animation DO NOT USE
+					});
+					$('.headerNavText').css({"cursor":"pointer","pointer-events":"auto"});
+				});
+				$('#headerImg').animate({
+					height: headerImgHeight,
+					opacity: "0"
+				}, 1000, function() {
+					//animation
+				});
+			});
+		}
+
+		$(document).resize(function() {
+			//windowHeight = $(window).height();
+			documentHeight = $(document).height();
+			windowHeight = $(window).height();
+			console.log(documentHeight);
+			console.log(windowHeight);
+			headerHeight = (documentHeight / 100) * 15;//windowHeight / 100) * 15;//4;
+			marginHeight = headerHeight + 15;
+			$('#contentContainer').css({"margin-top":marginHeight});
+		});
+
+		$(window).resize(function() {
+			/*futureHeaderHeight = $(window).height();
+			headerHeight = futureHeaderHeight / 4;
+			console.log(headerHeight);
+			headerImgHeight = headerHeight / 5;
+			$('#headerImg').css({height:headerImgHeight});*/
+
+			//fix so on resize image height changes too
+
+
+			//headerHeight = $('#header').height();
+			headerHeight = (windowHeight / 100) * 15;//4;
+			marginHeight = headerHeight + 15;
+			$('#contentContainer').css({"margin-top":marginHeight});
+		});
+
+		$(document).ready(function() {
+			headerAnimation();
+		});
+
+
+		console.log(defaultImgHeight);
+
+/*
+		function headerLinks(e) {
+			console.log('test');
+			$('.headerNavText').css({"cursor":"default","pointer-events":"none"});
+			$('.headerNavText').delay(100).animate({
+				opacity: 0
+			}, 200, function() {
+				console.log($('#headerImg').offset());
+				$('#headerImg').delay(100).animate({
+					"left": "50%",
+					//SUPER HACKY BUT AUTO ISNT A NUMBER SO JQUERY CANNOT ANIMATE IT
+					"margin-left": -$('#headerImg').width()/2
+				}, 650, function() {
+					$('#headerImg').css({"margin-left":"auto","margin-right":"auto","left":"0px"});
+						$('#header').animate({
+							height: "80%"
+						}, 1000, function() {
+							$('#header').animate({
+								height: "75%"
+							}, 350/*250 in original, function() {
+								console.log('header reverse animation complete');
+								if (e == 'p') {
+									$('#projectsTag')[0].click();
+								} else if (e == 'c') {
+									$('#contactTag')[0].click();
+								}
+								//headerAnimation();
+							});
+						});
+						$('#headerImg').animate({
+							height: defaultImgHeight
+						}, 1000, function() {
+							//animation
+						});
+				});
+			});
+		}
+
+*/
+
+		/*
+
+		function headerAnimation() {
+
+			$('#contentContainer').css({"margin-top":marginHeight});
+			$('#header').delay(200).animate({
+				height: "80%",
+			}, 250, function() {
+				$('#header').animate({
+					height: "25%"
+				}, 1000, function() {
+					$('#headerImg').delay(100).animate({
+						"margin-left": "30px",//maybe 15px
+						"margin-right": "0px"
+					}, 650, function() {
+						$('.headerNavText').delay(100).animate({
+							opacity: 1
+						}, 200, function() {
+							$('.headerNavText').css({"cursor":"pointer","pointer-events":"auto"});
+							console.log('header animation complete');
+						});
+					});
+				});
+				futureHeaderHeight = $(window).height();
+				headerHeight = futureHeaderHeight / 4;
+				console.log(headerHeight);
+				headerImgHeight = headerHeight / 1.5;
+				$('#headerImg').animate({
+					height: headerImgHeight//'150px'
+				}, 1000, function() {
+					//animation
+				});
+			});
+		}*/
+		</script>
+	</html>

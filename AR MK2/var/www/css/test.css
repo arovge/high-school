@@ -1,0 +1,150 @@
+*, *:after, *:before {
+    margin: 0 auto;
+    padding: 0;
+    border: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    -o-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+  background-color: #3F3F3F;
+  color: #EEEEEE;
+  font-family: Roboto, sans-serif;
+  outline: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* Roboto Font CSS */
+@font-face { font-family: Roboto; src: url('/fonts/Roboto/Roboto-Regular.ttf'); }
+@font-face { font-family: Roboto-Thin; src: url('/fonts/Roboto/Roboto-Thin.ttf'); }
+
+/* Scrollbar CSS */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track-piece {
+  background-color: #ffffff;
+  -webkit-border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:vertical {
+  height: 6px;
+  background-color: #666;
+  -webkit-border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+  width: 6px;
+  background-color: #666;
+  -webkit-border-radius: 6px;
+}
+
+/* CSS Class for disabling Selection */
+.noSelect {
+  user-select: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -o-user-select: none;
+}
+
+.centerVertically {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Header CSS */
+#header {
+  left: 0px;
+  top: 0px;
+
+  /* maybe change % to px???*/
+  height: 75%;
+  width: 100%;
+
+  margin-bottom: 0px;
+
+  background-color: #3498DB;
+  box-shadow: 0px 0px 16px 4px rgba(0,0,0,0.15);
+
+  position: absolute;
+  display: inline-block;
+
+  animation: headerAnimation 2s;
+
+  font-size: 32px;
+}
+
+@keyframes headerAnimation {
+  from {
+    height: 75%;
+  }
+
+  to {
+    height: 25%;
+  }
+}
+
+#headerImg {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+#headerNavText {
+  font-family: Roboto-Thin;
+  font-size: 50px;
+  position: absolute;
+  display: inline-block;
+  margin-left: 15%;
+  padding: 10px;
+  transition-duration: 0.3s;
+  color: white;
+  opacity: 0;
+  text-decoration: none;
+  cursor: initial;
+  pointer-events: none;
+  vertical-align: middle;
+}
+
+#headerNavText:hover {
+  background-color: #2C82BB;
+}
+
+#contentContainer {
+  display: inline-block;
+  opacity: 1;
+  margin-left: 15px;
+  margin-right: 15px;
+  width: auto;
+  height: auto;
+  font-size: 18px;
+}
+
+#paragraphText {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+#textLink {
+  color: #eeeeee;
+}
+
+/* Mobile CSS */
+@media (max-width: 840px) {
+  #headerImg {
+    height: 150px;
+  }
+
+}

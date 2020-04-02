@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+	<html lang="en">
+		<head>
+			<meta charset="utf-8">
+		  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+			<!-- first three tags -->
+			<script src="/js/jquery-3.0.0.min.js"></script>
+			<script type="text/javascript" src="/js/header.js"></script>
+      <script src="/js/angular.min.js"></script>
+			<script src="/js/bonus.js"></script>
+			<link rel="stylesheet" type="text/css" href="/css/test.css">
+			<title>Bonus</title>
+		</head>
+		<body>
+      <div id="contentBox" ng-app="bonus" ng-controller="controller">
+			<div class="noSelect" id="header"></div>
+      <div class="noSelect" id="jobs" ng-click="addSign('1')">1</div>
+      <div class="noSelect" id="jobs" ng-click="addSign('2')">2</div>
+      <div class="noSelect" id="jobs" ng-click="addSign('3')">3</div><br>
+      <div class="noSelect" id="jobs" ng-click="addSign('4')">4</div>
+      <div class="noSelect" id="jobs" ng-click="addSign('5')">5</div>
+
+      <div class="noSelect" id="jobs" ng-click="addSign('K')">K</div><br>
+      <div class="noSelect" id="jobs" ng-click="addSign('L')">L</div>
+      <div class="noSelect" id="jobs" ng-click="addSign('?')">?</div>
+
+      <div class="noSelect" id="jobs" ng-click="clear()">CE</div>
+
+      <div class="noSelect" id="bonusContainer">{{ bonus }}</div>
+      <div class="noSelect" id="bonusContainer">{{ extra }}</div>
+    </div>
+		</body>
+	</html>
